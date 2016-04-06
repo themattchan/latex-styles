@@ -2,16 +2,16 @@
 \ProvidesClass{MattHomework}[2016/04/04 version 1.00 Homework Style]
 
 % TODO sort this out
-\DeclareOption{10pt}{
-  \PassOptionsToClass{\CurrentOption}{article}
-}
+% \DeclareOption{10pt}{
+%   \PassOptionsToClass{\CurrentOption}{article}
+% }
 
 %% Process given options
 \ProcessOptions \relax
 
 %% Load base
-\LoadClass[letterpaper]{article}
-
+%% Pass all options to article
+\LoadClassWithOptions{article}
 %--------------------------------------------------------------------------------
 % Titles etc
 %--------------------------------------------------------------------------------
@@ -42,6 +42,8 @@
 
 \RequirePackage{enumerate}
 \RequirePackage{graphicx}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 
 %--------------------------------------------------------------------------------
 % Math
