@@ -40,10 +40,21 @@
 \RequirePackage{secdot} % dot after section number
 \RequirePackage{lmodern}
 
+% Colors
+\RequirePackage[usenames, dvipsnames]{color}
+\definecolor{MyPastelBlue}{rgb}{0,0.3,0.7}
+\definecolor{MyPastelGreen}{rgb}{0.133,0.545,0.133}
+\definecolor{MyPastelGold}{rgb}{0.75,0.49,0.07}
+
 \RequirePackage{enumerate}
 \RequirePackage{graphicx}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,pdfborderstyle={/S/U/W 1}}
+\RequirePackage{tikz}
+\RequirePackage{tabu}
+\RequirePackage{mdframed}
 
 %--------------------------------------------------------------------------------
 % Math
@@ -52,6 +63,7 @@
 \RequirePackage[]{units} % includes nicefrac
 \RequirePackage{mathtools}
 \RequirePackage{empheq}
+\RequirePackage{siunitx}            % scientific notation
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 % TODO make this an option
@@ -80,21 +92,6 @@
 \newtheorem*{claim}{Claim}
 \newtheorem*{note}{Note}
 \newtheorem{case}{Case}
-
-%--------------------------------------------------------------------------------
-% Colors
-%--------------------------------------------------------------------------------
-\RequirePackage[usenames, dvipsnames]{color}
-\definecolor{MyPastelBlue}{rgb}{0,0.3,0.7}
-\definecolor{MyPastelGreen}{rgb}{0.133,0.545,0.133}
-\definecolor{MyPastelGold}{rgb}{0.75,0.49,0.07}
-
-\RequirePackage{hyperref}
-\RequirePackage{tikz}
-\RequirePackage{tabu}
-\RequirePackage{siunitx}            % scientific notation
-\RequirePackage{mdframed}
-
 
 %--------------------------------------------------------------------------------
 % Code Highlights
@@ -142,6 +139,13 @@
     {\textbf{\texttt{\LARGE{\color{red} TODO TODO TODO}}}}
   \end{mdframed}
 }
+
+\newcommand{\fixme}{%
+  \begin{mdframed}[linecolor=blue, linewidth=3pt, userdefinedwidth=\textwidth]
+    {\textbf{\texttt{\LARGE{\color{blue} FIXME}}}}
+  \end{mdframed}
+}
+
 
 
 \endinput
