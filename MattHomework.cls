@@ -60,13 +60,16 @@
 }
 \RequirePackage{tikz}
 \RequirePackage{tabu}
+\RequirePackage{multirow}
 \RequirePackage{mdframed}
+
+\RequirePackage{ulem}           % strikeouts etc
 
 %--------------------------------------------------------------------------------
 % Math
 %--------------------------------------------------------------------------------
 \RequirePackage{amssymb,amsmath}
-\RequirePackage[]{units} % includes nicefrac
+\RequirePackage[]{units}        % includes nicefrac
 \RequirePackage{mathtools}
 \RequirePackage{empheq}
 \RequirePackage[binary-units = true]{siunitx}            % scientific notation
@@ -136,6 +139,23 @@
 }
 \lstnewenvironment{code}[2][Pseudo,MySimpleStyle]{\lstset{language=#1,style=#2}}{}
 \lstnewenvironment{MyC}{\lstset{language={C},style=MySimpleStyle}}{}
+
+%--------------------------------------------------------------------------------
+% Tikz things
+%--------------------------------------------------------------------------------
+
+% nice circled text
+\newcommand{\pgftextcircled}[1]{
+    \setbox0=\hbox{#1}%
+    \dimen0\wd0%
+    \divide\dimen0 by 2%
+    \begin{tikzpicture}[baseline=(a.base)]%
+        \useasboundingbox (-\the\dimen0,0pt) rectangle (\the\dimen0,1pt);
+        \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
+    \end{tikzpicture}
+}
+\let\textcircled=\pgftextcircled
+\let\textcc=\pgftextcircled
 
 %--------------------------------------------------------------------------------
 % TODO
