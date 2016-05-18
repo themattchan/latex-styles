@@ -41,7 +41,7 @@
 \RequirePackage{lmodern}
 
 % Colors
-\RequirePackage[usenames, dvipsnames]{color}
+\RequirePackage[usenames, dvipsnames]{xcolor}
 \definecolor{MyPastelBlue}{rgb}{0,0.3,0.7}
 \definecolor{MyPastelGreen}{rgb}{0.133,0.545,0.133}
 \definecolor{MyPastelGold}{rgb}{0.75,0.49,0.07}
@@ -51,7 +51,13 @@
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \RequirePackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,pdfborderstyle={/S/U/W 1}}
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=MyPastelBlue,
+%  urlcolor=MidnightBlue,
+  citecolor=black,
+  pdfborderstyle={/S/U/W 1}
+}
 \RequirePackage{tikz}
 \RequirePackage{tabu}
 \RequirePackage{mdframed}
@@ -63,7 +69,7 @@
 \RequirePackage[]{units} % includes nicefrac
 \RequirePackage{mathtools}
 \RequirePackage{empheq}
-\RequirePackage{siunitx}            % scientific notation
+\RequirePackage[binary-units = true]{siunitx}            % scientific notation
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 % TODO make this an option
