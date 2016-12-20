@@ -1,12 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{MattHomework}[2016/04/04 version 1.00 Homework Style]
 
-% TODO sort this out
-% \DeclareOption{10pt}{
-%   \PassOptionsToClass{\CurrentOption}{article}
-% }
-
-%% Process given options
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions \relax
 
 %% Load base
@@ -39,7 +34,7 @@
 \RequirePackage{float}  % use attribute [H] to force images to stay where they should be
 \RequirePackage{secdot} % dot after section number
 \RequirePackage{lmodern}
-
+\RequirePackage{textcomp}
 % Colors
 \RequirePackage[usenames, dvipsnames]{xcolor}
 \definecolor{MyPastelBlue}{rgb}{0,0.3,0.7}
@@ -120,7 +115,7 @@
 \lstdefinelanguage{Pseudo}{
   morekeywords=[1]{define, def, function, procedure, algorithm},
   morekeywords=[2]{for, from, do, if, then, else, return, set, all,
-    each, while, until, yield, let, var, val},
+    each, while, until, yield, let, var, val, case, match, of},
   morecomment=[s]{(*}{*)},
   morecomment=[l]{--},
   alsodigit=!\$\%\&*+-./:<=>?@^_~,
@@ -135,9 +130,10 @@
     {->}{{$\rightarrow\;$}}2 {>=}{{$\geq\;$}}2 {<-}{{$\leftarrow$}}2
     {<=}{{$\leq\;$}}2 {=>}{{$\Rightarrow$}}2
     {\ .\ }{{\ $\circ$\ }}3 {(.)}{{($\circ$)}}2
+    {\\ }{{$\lambda$}}1
   }
 }
-\lstnewenvironment{code}[2][Pseudo,MySimpleStyle]{\lstset{language=#1,style=#2}}{}
+\lstnewenvironment{code}[1][Pseudo]{\lstset{language={#1},style=MySimpleStyle}}{}
 \lstnewenvironment{MyC}{\lstset{language={C},style=MySimpleStyle}}{}
 
 %--------------------------------------------------------------------------------
